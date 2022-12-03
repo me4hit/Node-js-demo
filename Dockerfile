@@ -1,6 +1,7 @@
-FROM  node:4.6
+FROM  node:12.18.1
 WORKDIR /app
-ADD ./app
+COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
 EXPOSE 3000
+COPY . .
 CMD npm start
